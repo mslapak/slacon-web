@@ -7,7 +7,15 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "SLACON | AI & Technologie",
-  description: "Konzultace, vývoj a automatizace poháněná AI."
+  description: "Konzultace, vývoj a automatizace poháněná AI.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/favicon-32x32.png",
+    other: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" }
+    ]
+  }
 };
 
 export default function RootLayout({
