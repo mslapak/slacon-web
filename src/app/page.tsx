@@ -11,7 +11,7 @@ export default function HomePage() {
 
   const t = {
     cz: {
-      nav: ["Domů", "Služby", "O nás", "Kontakt"],
+      nav: ["Domů", "Služby", "O nás", "Novinky", "Kariéra", "Aplikovaná AI", "Kontakt"],
       headline: "Pomáháme firmám růst díky AI, automatizaci a chytrému vývoji softwaru.",
       subtext:
         "Jsme technologický partner pro firmy, které chtějí digitalizovat a inovovat. Od konzultace přes vývoj po nasazení.",
@@ -64,7 +64,7 @@ export default function HomePage() {
       },
     },
     en: {
-      nav: ["Home", "Services", "About", "Contact"],
+      nav: ["Home", "Services", "About", "News","Carrer","Usecases","Contact",],
       headline: "We help companies grow with AI, automation, and smart software development.",
       subtext:
         "We are a technology partner for companies looking to digitize and innovate. From consulting to development and deployment.",
@@ -120,40 +120,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen px-6 md:px-12 py-24 bg-gray-800 text-white">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 flex items-center justify-between px-6 md:px-12 py-4 bg-gray-900 z-50 shadow-md">
-        <Image src="/SLACON-logo-transparent-clean.png" alt="SLACON logo" width={90} height={30} />
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 text-sm">
-          <Link href="#">{t[lang].nav[0]}</Link>
-          <Link href="#sluzby">{t[lang].nav[1]}</Link>
-          <Link href="#o-nas">{t[lang].nav[2]}</Link>
-          <Link href="#kontakt">{t[lang].nav[3]}</Link>
-          <span className="mx-2">|</span>
-          <button onClick={() => setLang("cz")} className={lang === "cz" ? "font-bold" : ""}>CZ</button>
-          <button onClick={() => setLang("en")} className={lang === "en" ? "font-bold" : ""}>EN</button>
-        </nav>
-        {/* Mobile Hamburger */}
-        <div className="md:hidden">
-          <button onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
-            {mobileOpen ? <X className="text-white w-6 h-6" /> : <Menu className="text-white w-6 h-6" />}
-          </button>
-        </div>
-      </header>
 
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="fixed inset-x-0 top-16 bg-gray-800 flex flex-col items-center gap-4 py-4 md:hidden z-40">
-          <Link href="#" onClick={() => setMobileOpen(false)}>{t[lang].nav[0]}</Link>
-          <Link href="#sluzby" onClick={() => setMobileOpen(false)}>{t[lang].nav[1]}</Link>
-          <Link href="#o-nas" onClick={() => setMobileOpen(false)}>{t[lang].nav[2]}</Link>
-          <Link href="#kontakt" onClick={() => setMobileOpen(false)}>{t[lang].nav[3]}</Link>
-          <div className="flex items-center gap-4 pt-2 border-t border-gray-700 w-full justify-center">
-            <button onClick={() => { setLang("cz"); setMobileOpen(false); }} className={lang === "cz" ? "font-bold" : ""}>CZ</button>
-            <button onClick={() => { setLang("en"); setMobileOpen(false); }} className={lang === "en" ? "font-bold" : ""}>EN</button>
-          </div>
-        </div>
-      )}
 
       {/* Hero Section */}
       <div className="flex flex-col-reverse md:flex-row items-center gap-10 pt-28">
